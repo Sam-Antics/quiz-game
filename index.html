@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <title>JavaScript Code Quiz!</title>
+</head>
+<body>
+    <!-- High Score and Timer in the Header -->
+  <header>
+      <a id="highScores-link">HIGH SCORES</a>
+      <time>Time: <span id="timer"></span></time>
+  </header>
+
+  <main>
+    <!-- Instructions and Start Button -->
+  <section class="container">
+    <div id="instructions">
+        <h2>This timed quiz will test your knowledge of JavaScript fundamentals.</h2>
+        <h3>Try to answer the questions within the time limit. <br> Keep in mind, incorrect answers will be penalized 10 seconds. Good Luck!</h3>
+    </div>
+    <div>
+      <button type="button" id="startBtn" class="btn">Start Quiz</button>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section class="container">
+    <div>
+      <h2 id="question">Question Placeholder</h2>
+    </div>
+    <div id="answer-options">
+      <button id="option1" class="btn answerBtn"></button>
+      <button id="option2" class="btn answerBtn"></button>
+      <button id="option3" class="btn answerBtn"></button>
+      <button id="option4" class="btn answerBtn"></button>
+    </div>
+  </section>
+
+</main>
+
+    <!-- Footer -->
+  <footer>
+      <div>
+        <p>@copy Design samAntics 2022</p>
+      </div>
+  </footer>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
