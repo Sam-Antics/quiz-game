@@ -1,0 +1,85 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-clr: rgb(113, 149, 199);
+    --secondary-clr: rgb(207, 187, 164);
+    --tertiary-color: rgb(209, 210, 212);
+    --quaternary-clr: rgb(48, 75, 101);
+    --quinary-clr: rgb(109, 102, 95);
+}
+
+body {
+    background-color: var(--primary-clr);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--quinary-clr);
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-color: var(--quaternary-clr);
+    color: var(--secondary-clr);
+    padding: 10px 20px;
+}
+
+/* Main Area Styles */
+
+/* Containers */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-clr);
+    flex-direction: column;
+    max-width: 80%;
+    margin-top: 5px;
+    border: 5px solid var(--quaternary-clr);
+    padding: 5px;
+    border-radius: 30px;
+    box-shadow: 5px 2px 2px rgba(209, 210, 212, .45);
+}
+
+/* Buttons */
+.btn {
+    display: block;
+    background-color: var(--quaternary-clr);
+    color: var(--secondary-clr);
+    border-radius: 8px;
+    border: none;
+    padding: 5px;
+    box-shadow: 5px 2px 2px rgba(209, 210, 212, .45);
+}
+
+.container h2, h3 {
+    text-align: center;
+}
+
+
+footer {
+    color: var(--quaternary-clr)
+}
+/* Media Queries */
+
+@media screen and (min-width: 850px) {
+    .card {
+      max-width: 680px;
+    }
+  }
+  
+  /* Media query that specifies devices that can utilize hover */
+  @media (hover) {
+    /* Stylings pertaining to hover pseudo-class*/
+    a:hover {
+      color: var(--tertiary-clr);
+    }
+  
+    button:hover {
+      background-color: var(--secondary-clr);
+      color: var(--quaternary-clr);
+    }
+  }
