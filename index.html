@@ -17,7 +17,7 @@
   <main>
     <!-- Instructions and Start Button -->
   <section class="container">
-    <div id="instructions">
+    <div id="instructions-card">
         <h2>Coding Quiz</h2>
         <h3>This timed quiz will test your knowledge of JavaScript fundamentals.</h3>
         <h3>Try to answer the questions within the time limit. <br> Keep in mind, incorrect answers will be penalized 10 seconds. <br> Good Luck!</h3>
@@ -28,15 +28,39 @@
   </section>
 
   <!-- Questions -->
-  <section class="container">
+  <section hidden id="questions-card" class="container">
     <div>
-      <h2 id="question">Question Placeholder</h2>
+      <h2 id="questions-text">Question Placeholder</h2>
     </div>
     <div id="answer-options">
       <button id="option1" class="btn answerBtn"></button>
       <button id="option2" class="btn answerBtn"></button>
       <button id="option3" class="btn answerBtn"></button>
       <button id="option4" class="btn answerBtn"></button>
+    </div>
+    <div id="results">
+      <hr>
+      <p id="results-text"></p>
+    </div>
+  </section>
+
+  <!-- Final Scores at the End -->
+  <section hidden id="finalScore-card" class="container">
+    <h2>Congratulations! You've finished.</h2>
+    <p>Your final score is <span id="score"></span></p>
+    <form id="initials-submission" class="initials-form">
+      <label for="initials">Enter Initials: </label>
+      <input type="text" id="initials">
+      <button id="submitInitBtn" class="btn">Submit to High Scores</button>
+    </form>
+  </section>
+
+  <!-- Score Leaderboard -->
+  <section hidden id="leaders-card" class="container">
+    <div>
+      <h2>High Scores</h2>
+      <ol id="highScores-list">
+      </ol>
     </div>
   </section>
 
