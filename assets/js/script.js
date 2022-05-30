@@ -34,6 +34,8 @@ const quizQuestions = [
 
 // global variables
 var currentQuestion = "";
+var time = "";
+var interval = "";
 
 // function to hide the container cards
 function hideContainers() {
@@ -52,6 +54,30 @@ function beginQuiz() {
   // index user's current question, then call showQuestion function to display on the page
   currentQuestion = 0;
   showQuestion();
+
+  // set total time by number of questions
+  time = quizQuestions.length * 10;
+
+  // executes "countdown" function every second to update time
+  interval = setInterval(countdown, 1000);
+
+  // call displayTime() to display on page on Start Quiz button click
+  displayTime();
+}
+
+// countdown function reduces by 1, displays new value, and ends quiz when time runs out
+function countdown() {
+  time--;
+  displayTime();
+  if (time < 1) {
+    endQuiz();
+  }
+}
+
+// display time on page
+const timeDisplay = document.querySelector("#timer");
+function displayTime() {
+  timeDisplay.textContent = time;
 }
 
 // display question and answers for currentQuestion
@@ -71,6 +97,17 @@ function showQuestion() {
     answerBtn.textContent = answer;
   }
   
+}
+
+// display score
+const score = document.querySelector("#score");
+
+// when quiz is done, clear timer, hide cards, and display final score card w/ score
+function endQuiz() {
+  clearInterval(interval);
+  hideContainers();
+  document.getElementById("finalScore-card").style.visibility = "visible";
+  score.textContent = time;
 }
 
 // begin with all containers but instructions hidden
