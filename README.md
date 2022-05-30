@@ -24,7 +24,7 @@ THEN I can save my initials and score
 ```
 
 ## Deployed Website
-
+https://sam-antics.github.io/quiz-game/
 
 ![Deployed website](#)
 
