@@ -36,8 +36,8 @@ const quizQuestions = [
 var currentQuestion = "";
 var time = "";
 var interval = "";
-const resultDiv = document.querySelector("#results");
-const resultText = document.querySelector("#results-text");
+var resultDiv = document.querySelector("#results");
+var resultText = document.querySelector("#results-text");
 
 // function to hide the container cards
 function hideContainers() {
@@ -119,10 +119,11 @@ function correctAnswer(answerBtn) {
   return answerBtn.textContent === quizQuestions[currentQuestion].correct;
 }
 
+
 // function for incorrect answers
 function answerCheck(eventObject) {
   let answerBtn = eventObject.target;
-  
+  resultDiv.style.display = "block";
   if (correctAnswer(answerBtn)) {
     resultText.textContent = "Correct!";
     setTimeout(hideResultText, 1000);
@@ -138,7 +139,15 @@ function answerCheck(eventObject) {
       displayTime();
       endQuiz();
     }
+  }
 
+      // increment current question
+      currentQuestion++;
+      // ...unless there are no more questions
+      if (currentQuestion < quizQuestions.length) {
+        showQuestion();
+      } else {
+        endQuiz;
   }
 }
 
