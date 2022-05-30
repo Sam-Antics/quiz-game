@@ -70,11 +70,6 @@ main {
 /* INIDIVIDUAL CARD STYLES */
 /* *********************** */
 
-/* Instructions */
-#instructions-card {
-    display: inline;
-}
-
 /* Questions */
 .answerBtn {
     width: 100%;
