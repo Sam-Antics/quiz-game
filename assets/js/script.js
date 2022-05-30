@@ -36,6 +36,8 @@ const quizQuestions = [
 var currentQuestion = "";
 var time = "";
 var interval = "";
+const resultDiv = document.querySelector("#results");
+const resultText = document.querySelector("#results-text");
 
 // function to hide the container cards
 function hideContainers() {
@@ -45,6 +47,17 @@ function hideContainers() {
   document.getElementById("leaders-card").style.visibility = "hidden";
 }
 
+// begin with all containers but instructions hidden
+hideContainers();
+document.getElementById("instructions-card").style.visibility = "visible";
+
+// hide results div
+function hideResultText() {
+  resultDiv.style.display = "none";
+}
+
+// button click starts the quiz
+document.querySelector("#startBtn").addEventListener("click", beginQuiz);
 
 function beginQuiz() {
   // hide all containers but questions
@@ -96,8 +109,39 @@ function showQuestion() {
     let answerBtn = document.querySelector("#option" + i);
     answerBtn.textContent = answer;
   }
-  
 }
+
+// when answer button is clicked, click event...
+document.querySelector("#answer-options").addEventListener("click", answerCheck);
+
+// compare clicked option to the correct answer
+function correctAnswer(answerBtn) {
+  return answerBtn.textContent === quizQuestions[currentQuestion].correct;
+}
+
+// function for incorrect answers
+function answerCheck(eventObject) {
+  let answerBtn = eventObject.target;
+  
+  if (correctAnswer(answerBtn)) {
+    resultText.textContent = "Correct!";
+    setTimeout(hideResultText, 1000);
+  } else {
+    resultText.textContent = "Wrong Answer. Time deducted.";
+    setTimeout(hideResultText, 1000);
+    if (time >= 10) {
+      time = time - 10;
+      displayTime();
+    } else {
+      // if time is less than 10, setting to 0 and ending quiz
+      time = 0;
+      displayTime();
+      endQuiz();
+    }
+
+  }
+}
+
 
 // display score
 const score = document.querySelector("#score");
@@ -109,10 +153,3 @@ function endQuiz() {
   document.getElementById("finalScore-card").style.visibility = "visible";
   score.textContent = time;
 }
-
-// begin with all containers but instructions hidden
-hideContainers();
-document.getElementById("instructions-card").style.visibility = "visible";
-
-// button click starts the quiz
-document.querySelector("#startBtn").addEventListener("click", beginQuiz);
