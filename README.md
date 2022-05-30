@@ -26,7 +26,7 @@ THEN I can save my initials and score
 ## Deployed Website
 https://sam-antics.github.io/quiz-game/
 
-![Deployed website](#)
+![Deployed website](./assets/images/screenshot1.png)
 
 ## Built With
 * HTML
